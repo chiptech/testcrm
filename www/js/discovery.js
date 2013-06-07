@@ -245,7 +245,7 @@ numTabEnCours=0;
 
 fillDB();
 
-window.location = "accueil.html";
+window.location = "online.html";
 
 }
 }
@@ -264,8 +264,8 @@ function fillDB()
 function constructionBaseLocal()
 {
    initDB("account");
-	//initDB("contact");
-	// initDB("appointment");
+   initDB("contact");
+   initDB("appointment");
   navigator.notification.alert("BD created with Succes!");
 }
 
