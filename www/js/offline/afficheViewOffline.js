@@ -25,7 +25,7 @@ function affichViewEncours()
 	$('#busy').show();	
 	var elem=document.getElementById('thelist');
 	elem.innerHTML="";
-    onDeviceReady ();
+    CallServView(sessionStorage.getItem("offLineRecords"));
 }
 function onDeviceReady () {
      window.requestFileSystem( LocalFileSystem.PERSISTENT, 0, gotFS, fail);
@@ -46,6 +46,7 @@ function gotFS(fileSystem) {
     	var reader = new FileReader();
         reader.onloadend = function(evt) {
             console.log("Read as text");
+			sessionStorage.setItem("offLineRecords",evt.target.result);
 		    CallServView(evt.target.result);
         };
         reader.readAsText(file);
@@ -548,12 +549,11 @@ affichViewEncours();
 
 function goRecord(j)
 {
-	//window.location=sessionStorage.getItem("EntityName")+'Form.html?'+guid[j];
-	
-	//alert(guid[j]);
-	sessionStorage.setItem("guidEntity",guid[j]);
-	window.location=sessionStorage.getItem("EntityName")+'Form.html';
-	}
+	$records = $.parseJSON(sessionStorage.getItem("offLineRecords"));
+	sessionStorage.setItem("CurrentRecord",$records.Entities[j]);
+	//window.location=sessionStorage.getItem("EntityName")+'Form.html';
+	window.location= 'form.html' ;
+}
 function goback()
 {
 	window.location="accueil.html";
@@ -628,14 +628,6 @@ var entityName = sessionStorage.getItem('offlineDB');
 					break;
 	default: name= attr['name'];
 }
-  /*if ( entityName == "contact")
-  {
-      name= attr['firstname']+ " "+ attr['lastname'];
-  
-  }else
-  {
-		name= attr['name'];
-  }*/
  return name ;
 }
 
