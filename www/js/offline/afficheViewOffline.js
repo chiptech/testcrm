@@ -550,7 +550,7 @@ affichViewEncours();
 function goRecord(j)
 {
 	$records = $.parseJSON(sessionStorage.getItem("offLineRecords"));
-	sessionStorage.setItem("CurrentRecord",$records.Entities[j]);
+	sessionStorage.setItem("CurrentRecord",JSON.stringify($records.Entities[j]));
 	//window.location=sessionStorage.getItem("EntityName")+'Form.html';
 	window.location= 'form.html' ;
 }
