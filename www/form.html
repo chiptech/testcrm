@@ -17,7 +17,7 @@
 	   <div id="record"> </div>
 	   <script>
 		    var record = sessionStorage.getItem("CurrentRecord");
-			$('#record').append(record);
+			$('#record').append(JSON.stringify(record));
 	   </script>
     </body >
 </html>
