@@ -345,7 +345,9 @@ $('#busy').show();
 	var login_org=$('#name').val();
 	var ChoixProtocol = document.getElementById('selectProtocol');
 	  var ProtocolChoisi = ChoixProtocol.options[ChoixProtocol.selectedIndex].text;
-
+     
+	 
+	 
 	  
     var request = { u:{login:login_org,pw:$('#password').val(),url: ProtocolChoisi+'://'+$('#AddServ').val()} };
     var jsondata = JSON.stringify(request);
@@ -356,6 +358,9 @@ $('#busy').show();
     ContentType = "application/json; charset=utf-8";
     DataType = "json";
     ProcessData = true;
+	
+	console.log("hostname"+sessionStorage.getItem("hostName"));
+	console.log(jsondata);
     CallService1();
 
 }
@@ -373,6 +378,9 @@ function CallService1() {
 		   async:true,
         success: function (msg) {
             //On Successfull service call
+			console.log("sucess appel discovery WS");
+			console.log(JSON.stringify(msg));
+			alert(JSON.stringify(msg));
             ServiceSucceeded(msg);
         },
            error: ServiceFailed  // When Service call fails
@@ -448,6 +456,8 @@ orgNameSelect.selectedIndex=0;
     }
 }
 function ServiceFailed(result) {
+   console.log("Serivcie Failed " +result);
+   alert("Serivcie Failed " +result);
  $('#busy').hide();
    Type = null; Url = null; Data = null; ContentType = null; DataType = null; ProcessData = null;
 }
@@ -462,7 +472,7 @@ function () {
 (
 function (event) {
     event.preventDefault();	
-   DiscoveryOrg();
+        DiscoveryOrg();
 		CryptagePW();
 
 }
