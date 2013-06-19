@@ -1,20 +1,25 @@
 <html class="ui-mobile">
 <head>
-    <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-		
-		<link rel="stylesheet" href="css/styles.css" />
-		<link rel="stylesheet" href="css/jquery.mobile-1.1.css" />
-		
-		<script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script>
-        <script src="phonegap.js"></script>
-	    <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="discovery.js"></script>
-	    <script src="js/iscroll1.js"></script>
-		<script src="js/iscroll-lite.js"></script>
+<script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="discovery.js" type="text/javascript"></script>  
+
+<script src="cordova-2.1.0.js" type="text/javascript"></script>  
+
+
+<script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.1.1.js"></script>
+<script src="js/iscroll1.js"></script>
+
+<link rel="stylesheet" href="css/styles.css" />
+<script src="js/iscroll-lite.js"></script>
+<link rel="stylesheet" href="css/jquery.mobile-1.1.css" />
+
+
 
 <style>
 body{
@@ -107,10 +112,13 @@ display : block;
   </div>
   
   <div data-role="content" class="ui-content" role="main">
+
+  
 <form id="form">
 	
-	<div  id="List"  >
-<div id="busy" />Chargement...</div>	
+  <div  id="List"  >
+<div id="busy" style="width: 170;"/>Chargement...</div>	
+
 <input id="X" name="X" type="hidden" /> 
 
 <h1> <span style="font-size:18px">Nom complet : </span></h1>
@@ -119,25 +127,11 @@ display : block;
 <h1> <span style="font-size:18px">Mot de passe :</span></h1>
 <input type="password" id="password" name="password" placeholder="*****************" required>
 
-<h1> <span style="font-size:18px">Nom de serveur :</span></h1>
-<select id="selectProtocol">
-    <option value="1">http</option>
-    <option value="2">https</option>
-</select>
-<input type="text" id="AddServ"  placeholder="adresse Serveur" required>
-<table style="width:100%;">
-<tr>
-<td style="width:70%;">
-<select id="orgName">
+<input type="submit" id="submitAuth" value="OK"/>
+ 
 
-</select>
- </td>
- <td style="width:30%;">
-<input type="submit" id="submitForm" value="Get Org"/>
- </td>
- </tr>
- </table>
-
+ 
+ 
 </form>
 
 
