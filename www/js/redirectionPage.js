@@ -33,7 +33,7 @@ function getFSFail(evt) {
 function init() {
 
     console.log("init");
-	sessionStorage.setItem('hostName', '10.13.121.63');
+	sessionStorage.setItem('hostName', 'www.crmhli.com:81');
 
 if((window.localStorage.getItem("login")==null)||(window.localStorage.getItem("pw")==null) ||(window.localStorage.getItem("urlOrg")==null) || 
 (window.localStorage.getItem("account")==null)||(window.localStorage.getItem("appointment")==null) ||(window.localStorage.getItem("contact")==null)

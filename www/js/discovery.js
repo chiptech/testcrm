@@ -340,7 +340,8 @@ $('#busy').show();
 	 {
 	 $("#submitAuth").remove();
 	 }
-	//sessionStorage.setItem("hostName","www.crmhli.com:81");
+	
+	sessionStorage.setItem("hostName","www.crmhli.com:81");
 	
 	var login_org=$('#name').val();
 	var ChoixProtocol = document.getElementById('selectProtocol');
